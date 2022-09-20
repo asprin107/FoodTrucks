@@ -10,12 +10,12 @@ services:
     volumes:
       - esdata1:/usr/share/elasticsearch/data
   web:
-    image: asprin/foodtrucks-web
-    command: python3 app.py
+    image: asprin/foodtrucks-web:2.0.0
+    #command: python3 app.py
     depends_on:
       - es
     ports:
-      - 5005:5000
+      - 80:5000
     volumes:
       - ./flask-app:/opt/flask-app
 volumes:
